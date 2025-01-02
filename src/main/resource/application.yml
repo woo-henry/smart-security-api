@@ -1,0 +1,63 @@
+server:
+  port: 9090
+  address: 0.0.0.0
+  compression:
+    enabled: true
+  tomcat:
+    max-swallow-size: -1
+  servlet:
+    context-path: /smart-security-api
+    
+spring:
+  application:
+    name: smart-security-api
+  profiles:
+    active: local
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/smart_security?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: (3Wl)6jRejJv
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      max-lifetime: 86400
+      maximum-pool-size: 100
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 1024
+        prepStmtCacheSqlLimit: 4096
+        useServerPrepStmts: true
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+  mvc:
+    locale: zh_CN
+    date-format: yyyy-MM-dd HH:mm:ss
+  session:
+    store-type: redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+  data:
+    redis:
+      repositories:
+        enabled: false
+    
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    org.springframework.boot: error
+    com.sanesong.security.api: info
+    
+log:
+  path: logs            #日志文件输出路径，默认为应用所在目录的logs目录
+  maxFileSize: 32MB     #单个日志文件大小，默认32MB
+  maxHistory: 30        #默认保存30天的记录
+  maxTotalSize: 8GB     #总日志文件上限大小，默认8GB，当日志大小超过这个值，删除旧的日志
+  maxErrorSize: 4GB     #错误日志文件上限大小，默认4GB，当日志大小超过这个值，删除旧的日志
