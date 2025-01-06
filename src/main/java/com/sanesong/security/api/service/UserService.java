@@ -31,15 +31,15 @@ public class UserService extends BaseService {
 	}
 	
 	public List<User> findUsers() {
-		return userRepository.findAll(Sort.by(Order.desc("createdTime")));
+		return userRepository.findAll(Sort.by(Order.desc("sortKey")));
 	}
 	
 	public User findUser(final String userName, final String password) {
 		return userRepository.findUser(userName, password);
 	}
 	
-	public User findUserById(final String userId) {
-		return userRepository.findUserById(userId);
+	public User findUserById(final String objectId) {
+		return userRepository.findUserById(objectId);
 	}
 	
 	public User saveUser(final User entity) {

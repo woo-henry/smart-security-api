@@ -27,7 +27,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user", indexes = { 
+@Table(name = "se_users", indexes = { 
 		@Index(name = "user_object_id", columnList = "object_id", unique = true),
 })
 public class User implements Serializable {
@@ -42,12 +42,16 @@ public class User implements Serializable {
 	private String objectId;
 	
 	@JsonProperty(value = "user_name")
-	@Column(name = "user_name", length = 32, nullable = true)
+	@Column(name = "user_name", length = 32, nullable = false)
 	private String userName;
 	
 	@JsonProperty(value = "password")
-	@Column(name = "password", length = 32, nullable = true)
+	@Column(name = "password", length = 32, nullable = false)
 	private String password;
+	
+	@JsonProperty(value = "sort_key")
+	@Column(name = "sort_key", nullable = false)
+	private int sortKey;
 	
 	@JsonProperty(value = "created_time")
 	@CreatedDate

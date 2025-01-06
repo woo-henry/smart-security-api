@@ -14,7 +14,7 @@ import com.sanesong.security.api.web.request.RequestFindUser;
 import com.sanesong.security.api.web.response.ResponseResult;
 
 @Controller
-@RequestMapping(value = "/api/user")
+@RequestMapping(value = "/api/users")
 public class UserController extends BaseController {
 
 	@Autowired
