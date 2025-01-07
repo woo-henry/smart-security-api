@@ -41,7 +41,7 @@ public class DeviceService extends BaseService {
 	}
 	
 	public List<Device> findDevices() {
-		return deviceRepository.findAll(Sort.by(Order.desc("createdTime")));
+		return deviceRepository.findAll(Sort.by(Order.desc("sortKey")));
 	}
 	
 	public List<Device> findDevicesByGroupId(final String groupId) {

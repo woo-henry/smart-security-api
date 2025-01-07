@@ -46,8 +46,12 @@ public class Tag implements Serializable {
 	private String tagName;
 	
 	@JsonProperty(value = "tag_color")
-	@Column(name = "tag_color", length = 32, nullable = false)
+	@Column(name = "tag_color", length = 32, nullable = true)
 	private String tagColor;
+	
+	@JsonProperty(value = "tag_remark")
+	@Column(name = "tag_remark", length = 255, nullable = true)
+	private String tagRemark;
 	
 	@JsonProperty(value = "sort_key")
 	@Column(name = "sort_key", nullable = false)

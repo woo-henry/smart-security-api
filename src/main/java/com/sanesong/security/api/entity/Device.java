@@ -46,43 +46,43 @@ public class Device implements Serializable {
 	private String deviceId;
 	
 	@JsonProperty(value = "device_name")
-	@Column(name = "device_name", length = 128, nullable = false)
+	@Column(name = "device_name", length = 128, nullable = true)
 	private String deviceName;
 	
 	@JsonProperty(value = "device_model")
-	@Column(name = "device_model", length = 64, nullable = false)
+	@Column(name = "device_model", length = 64, nullable = true)
 	private String deviceModel;
 	
 	@JsonProperty(value = "ip_address_v4")
-	@Column(name = "ip_address_v4", length = 32, nullable = false)
+	@Column(name = "ip_address_v4", length = 32, nullable = true)
 	private String ipAddressV4;
 	
 	@JsonProperty(value = "ip_address_v6")
-	@Column(name = "ip_address_v6", length = 64, nullable = false)
+	@Column(name = "ip_address_v6", length = 64, nullable = true)
 	private String ipAddressV6;
 	
 	@JsonProperty(value = "port")
-	@Column(name = "port", nullable = false)
+	@Column(name = "port", nullable = true)
 	private int port;
 	
 	@JsonProperty(value = "longtitude")
-	@Column(name = "longtitude", nullable = false)
+	@Column(name = "longtitude", nullable = true)
 	private double longtitude;
 	
 	@JsonProperty(value = "latitude")
-	@Column(name = "latitude", nullable = false)
+	@Column(name = "latitude", nullable = true)
 	private double latitude;
 	
 	@JsonProperty(value = "place_code")
-	@Column(name = "place_code", nullable = false)
+	@Column(name = "place_code", nullable = true)
 	private String placeCode;
 	
 	@JsonProperty(value = "place")
-	@Column(name = "place", nullable = false)
+	@Column(name = "place", nullable = true)
 	private String place;
 	
 	@JsonProperty(value = "org_code")
-	@Column(name = "org_code", nullable = false)
+	@Column(name = "org_code", nullable = true)
 	private String orgCode;
 	
 	@JsonProperty(value = "is_online")

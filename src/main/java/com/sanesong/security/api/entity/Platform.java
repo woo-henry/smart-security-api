@@ -61,6 +61,10 @@ public class Platform implements Serializable {
 	@Column(name = "platform_password", length = 128, nullable = false)
 	private String platformPassword;
 	
+	@JsonProperty(value = "enabled")
+	@Column(name = "enabled", nullable = false)
+	private boolean enabled;
+	
 	@JsonProperty(value = "sort_key")
 	@Column(name = "sort_key", nullable = false)
 	private int sortKey;

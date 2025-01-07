@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public final class RequestFindTags implements Serializable {
+public final class RequestFindGroupTags implements Serializable {
 
 	private static final long serialVersionUID = 4393194627936692313L;
 

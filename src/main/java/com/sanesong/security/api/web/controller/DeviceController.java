@@ -22,6 +22,13 @@ public class DeviceController extends BaseController {
 	private DeviceService deviceService;
 	
 	@ResponseBody
+	@PostMapping(value = "/find-all-devices")
+	public ResponseResult<List<Device>> findAllDevices() {
+		final List<Device> result = deviceService.findDevices();
+		return getSuccessResponseResult(result);
+	}
+	
+	@ResponseBody
 	@PostMapping(value = "/find-devices")
 	public ResponseResult<List<Device>> findDevices(@RequestBody final RequestFindDevices request) {
 		final List<Device> result = deviceService.findDevicesByGroupId(request.getGroupId());

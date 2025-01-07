@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.sanesong.security.api.entity.Tag;
 import com.sanesong.security.api.service.TagService;
 import com.sanesong.security.api.web.request.RequestDeleteTags;
-import com.sanesong.security.api.web.request.RequestFindTags;
+import com.sanesong.security.api.web.request.RequestFindGroupTags;
 import com.sanesong.security.api.web.request.RequestSaveTags;
 import com.sanesong.security.api.web.response.ResponseResult;
 
@@ -25,7 +25,14 @@ public class TagController extends BaseController {
 	
 	@ResponseBody
 	@PostMapping(value = "/find-tags")
-	public ResponseResult<List<Tag>> findTags(@RequestBody final RequestFindTags request) {
+	public ResponseResult<List<Tag>> findTags() {
+		final List<Tag> result = tagService.findTags();
+		return getSuccessResponseResult(result);
+	}
+	
+	@ResponseBody
+	@PostMapping(value = "/find-group-tags")
+	public ResponseResult<List<Tag>> findGroupTags(@RequestBody final RequestFindGroupTags request) {
 		final List<Tag> result = tagService.findTags(request.getGroupId());
 		return getSuccessResponseResult(result);
 	}
